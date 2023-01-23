@@ -13,9 +13,9 @@ void loop()
 {
   int motion = digitalRead(PIR_PIN);
   
-  if (motion == HIGH) {
+  if (motion == HIGH)
     alarm();
-  } else {
+  else {
     digitalWrite(BUZZER_PIN, LOW);
     digitalWrite(LED_PIN, LOW);
   }
