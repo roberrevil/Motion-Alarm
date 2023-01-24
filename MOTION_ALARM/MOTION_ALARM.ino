@@ -7,6 +7,8 @@ void setup()
   pinMode(BUZZER_PIN, OUTPUT);
   pinMode(LED_PIN, OUTPUT);
   pinMode(PIR_PIN, INPUT);
+
+  warmup();
 }
 
 void loop()
@@ -21,30 +23,21 @@ void loop()
   }
 }
 
-void alarm()
+void warmup()
 {
+  for (int i = 0; i < 60; i++) {
+    digitalWrite(LED_PIN, HIGH);
+    delay(500);
+    digitalWrite(LED_PIN, LOW);
+    delay(500);
+  }
+}
+
+void alarm() {
   digitalWrite(BUZZER_PIN, HIGH);
   digitalWrite(LED_PIN, HIGH);
-  delay(50);
+  delay(500);
   digitalWrite(BUZZER_PIN, LOW);
   digitalWrite(LED_PIN, LOW);
-  delay(50);
-  digitalWrite(BUZZER_PIN, HIGH);
-  digitalWrite(LED_PIN, HIGH);
-  delay(50);
-  digitalWrite(BUZZER_PIN, LOW);
-  digitalWrite(LED_PIN, LOW);
-  delay(50);
-  digitalWrite(BUZZER_PIN, HIGH);
-  digitalWrite(LED_PIN, HIGH);
-  delay(50);
-  digitalWrite(BUZZER_PIN, LOW);
-  digitalWrite(LED_PIN, LOW);
-  delay(50);
-  digitalWrite(BUZZER_PIN, HIGH);
-  digitalWrite(LED_PIN, HIGH);
-  delay(50);
-  digitalWrite(BUZZER_PIN, LOW);
-  digitalWrite(LED_PIN, LOW);
-  delay(50);
+  delay(500);
 }
